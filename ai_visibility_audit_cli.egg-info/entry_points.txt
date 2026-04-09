@@ -1,2 +1,0 @@
-[console_scripts]
-ai-visibility-audit = ai_visibility_audit.cli:entrypoint
