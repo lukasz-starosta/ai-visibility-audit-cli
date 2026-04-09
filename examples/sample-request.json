@@ -1,0 +1,6 @@
+{
+  "domain": "example.com",
+  "page_limit": 10,
+  "citation_urls": ["https://example.com/pricing"],
+  "pinned_urls": ["https://example.com/compare"]
+}

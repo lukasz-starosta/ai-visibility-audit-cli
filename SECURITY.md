@@ -1,0 +1,4 @@
+# Security
+
+If you discover a security issue in this repo, do not open a public issue with
+sensitive details. Report it privately to the PromptScout maintainers instead.
