@@ -1,0 +1,215 @@
+{
+  "artifactVersion": 1,
+  "generatedFrom": "ai_visibility_audit_cli",
+  "checksVersion": "website_scan_v1",
+  "input": {
+    "domain": "example.com",
+    "page_limit": 10,
+    "citation_urls": [
+      "https://example.com/pricing"
+    ],
+    "pinned_urls": [
+      "https://example.com/compare"
+    ]
+  },
+  "sourceSummary": {
+    "base_url": "https://example.com",
+    "overall_status": "warning",
+    "overall_score": 85,
+    "pages_scanned": 3,
+    "findings_count": 2,
+    "issue_count": 0,
+    "warning_count": 2,
+    "good_count": 1,
+    "errors": []
+  },
+  "summary": {
+    "overallStatus": "warning",
+    "statusLabel": "Needs work",
+    "pagesScanned": 3,
+    "findingsCount": 2,
+    "issueCount": 0,
+    "warningCount": 2,
+    "goodCount": 1,
+    "errors": []
+  },
+  "executiveSummary": [
+    "Needs work across 3 scanned pages with 2 total findings.",
+    "1 citation hint was supplied to bias owned-page discovery.",
+    "1 page needs structured data"
+  ],
+  "priorityFindings": [
+    {
+      "findingKey": "missing_schema_markup",
+      "message": "1 page needs structured data",
+      "pageUrl": "https://example.com/compare",
+      "severity": "medium"
+    },
+    {
+      "findingKey": "stale_content_signal",
+      "message": "1 page may look outdated",
+      "pageUrl": "https://example.com/about",
+      "severity": "low"
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://example.com/pricing",
+      "canonical_url": null,
+      "discovered_from": "citation",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "pricing",
+      "title": "Pricing",
+      "meta_description": "PromptScout pricing",
+      "word_count": 560,
+      "heading_summary": {
+        "h1_count": 1,
+        "h2_count": 3,
+        "h3_count": 1,
+        "h1": [
+          "Pricing"
+        ],
+        "h2": [
+          "Plans",
+          "Compare tiers",
+          "FAQ"
+        ],
+        "h3": [
+          "Annual"
+        ]
+      },
+      "schema_summary": {
+        "script_count": 1,
+        "types": [
+          "Product"
+        ],
+        "has_schema": true
+      },
+      "freshness_date": "2026-04-08T00:00:00+00:00",
+      "freshness_confidence": 0.9,
+      "evidence": {},
+      "findings": []
+    },
+    {
+      "url": "https://example.com/compare",
+      "canonical_url": null,
+      "discovered_from": "manual",
+      "fetch_status": "ok",
+      "status": "warning",
+      "http_status": 200,
+      "page_type": "comparison",
+      "title": "PromptScout vs Profound",
+      "meta_description": "Comparison page",
+      "word_count": 420,
+      "heading_summary": {
+        "h1_count": 1,
+        "h2_count": 2,
+        "h3_count": 0,
+        "h1": [
+          "PromptScout vs Profound"
+        ],
+        "h2": [
+          "Features",
+          "Support"
+        ],
+        "h3": []
+      },
+      "schema_summary": {
+        "script_count": 0,
+        "types": [],
+        "has_schema": false
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {},
+      "findings": [
+        {
+          "page_url": "https://example.com/compare",
+          "finding_key": "missing_schema_markup",
+          "severity": "medium",
+          "status": "warning",
+          "message": "Comparison page is missing structured data.",
+          "evidence": {
+            "path": "/compare"
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://example.com/about",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "warning",
+      "http_status": 200,
+      "page_type": "about",
+      "title": "About PromptScout",
+      "meta_description": "About PromptScout",
+      "word_count": 280,
+      "heading_summary": {
+        "h1_count": 1,
+        "h2_count": 1,
+        "h3_count": 0,
+        "h1": [
+          "About PromptScout"
+        ],
+        "h2": [
+          "Story"
+        ],
+        "h3": []
+      },
+      "schema_summary": {
+        "script_count": 1,
+        "types": [
+          "Organization"
+        ],
+        "has_schema": true
+      },
+      "freshness_date": "2022-03-01T00:00:00+00:00",
+      "freshness_confidence": 0.75,
+      "evidence": {},
+      "findings": [
+        {
+          "page_url": "https://example.com/about",
+          "finding_key": "stale_content_signal",
+          "severity": "low",
+          "status": "warning",
+          "message": "About page may look outdated.",
+          "evidence": {
+            "last_updated": "2022-03-01"
+          }
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "page_url": "https://example.com/compare",
+      "finding_key": "missing_schema_markup",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Comparison page is missing structured data.",
+      "evidence": {
+        "path": "/compare"
+      }
+    },
+    {
+      "page_url": "https://example.com/about",
+      "finding_key": "stale_content_signal",
+      "severity": "low",
+      "status": "warning",
+      "message": "About page may look outdated.",
+      "evidence": {
+        "last_updated": "2022-03-01"
+      }
+    }
+  ],
+  "websiteAudit": null,
+  "parityGapNotes": [
+    "Prompt-aware coverage summaries remain richer inside the PromptScout Website tab because the OSS CLI does not have monitored-prompt context by default.",
+    "Website-tab criteria cards are not yet emitted as first-class CLI artifacts; the raw finding model remains canonical here.",
+    "Answer-block, snippet-shape, and evidence-density signals remain outside the deterministic shared v1 contract."
+  ]
+}

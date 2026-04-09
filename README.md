@@ -1,44 +1,74 @@
-# AI Visibility Audit CLI
+# AI Visibility Audit by PromptScout
 
-Thin CLI wrapper for the internal PromptScout owned-domain audit API.
+Deterministic AI visibility audit artifacts for owned websites.
 
-This repo does not contain the private PromptScout audit engine. Instead, it
-calls the deterministic website-scan API that PromptScout already runs
-internally and renders shareable artifacts from the API response.
+This repository is the official CLI surface and artifact contract for
+`AI Visibility Audit by PromptScout`. Today it can call a compatible audit API
+or replay saved scan responses locally, which makes it useful for demos, CI,
+wrapper development, and contract testing while the standalone audit runner is
+opened up in later phases.
 
-## What it does
+## Why this exists
 
-- submits one owned-domain audit request to a configured PromptScout audit API
-- exposes the current deterministic baseline check catalog from the CLI
-- emits machine-readable JSON, human-readable Markdown, and a compact summary
-- keeps status semantics aligned with the PromptScout Website tab
-- can replay checked-in raw responses without making network calls
+- keep the public audit surface aligned with the PromptScout Website tab
+- ship stable JSON, Markdown, and terminal outputs that other wrappers can trust
+- make the product usable before broader skill, app, and MCP packaging lands
+- document parity gaps instead of silently forking into a different audit rubric
+
+## Current surface
+
+What you get today:
+
+- a CLI that submits owned-domain audit requests to a compatible API
+- a replay mode that renders checked-in raw responses with no network calls
+- a published baseline check catalog and stable artifact contract
+- golden tests that pin the generated JSON, Markdown, and summary outputs
+
+What is still intentionally out of scope in this repo today:
+
+- the standalone public audit runner
+- private PromptScout monitoring and customer-only context
+- prompt-aware coverage analysis that depends on monitored prompt data
+
+## Install
+
+Recommended with `uv`:
+
+```bash
+uv tool install .
+```
+
+Plain `pip` also works:
+
+```bash
+python -m pip install .
+```
 
 ## Quick start
 
-Set either the dedicated CLI env vars or the existing PromptScout API vars:
+Configure a compatible audit API target:
 
 ```bash
 export AI_VISIBILITY_AUDIT_API_URL=http://localhost:8081
 export AI_VISIBILITY_AUDIT_API_KEY=local-dev-key
 ```
 
-Run the CLI against a hosted or local `prompt-suggestion-api`:
+Run a live audit:
 
 ```bash
-uv run python -m ai_visibility_audit.cli --domain promptscout.app --output-dir ./out
+ai-visibility-audit --domain promptscout.app --output-dir ./out
 ```
 
 Inspect the bundled baseline checks:
 
 ```bash
-uv run python -m ai_visibility_audit.cli --show-checks
+ai-visibility-audit --show-checks
 ```
 
 Replay the bundled example without making network calls:
 
 ```bash
-uv run python -m ai_visibility_audit.cli \
+ai-visibility-audit \
   --input-file examples/sample-request.json \
   --response-file examples/sample-scan-response.json \
   --output-dir examples/generated
@@ -46,23 +76,37 @@ uv run python -m ai_visibility_audit.cli \
 
 ## Outputs
 
-The CLI writes three artifacts:
+The CLI writes three files:
 
 - `ai-visibility-audit.json`
 - `ai-visibility-audit.md`
 - `ai-visibility-audit.txt`
 
+The JSON artifact is canonical. The Markdown and text outputs are deterministic
+renderings of the same report data.
+
+## Docs
+
+- [docs/installation.md](docs/installation.md): install and environment setup
+- [docs/usage.md](docs/usage.md): CLI examples and output modes
+- [docs/artifact-contract.md](docs/artifact-contract.md): versioned output contract
+- [docs/parity-gap-register.md](docs/parity-gap-register.md): current Website-tab gaps
+
 ## Repo layout
 
-- `ai_visibility_audit/`: HTTP client, CLI wrapper, and report renderer
-- `docs/`: install and usage docs
-- `examples/`: sample request and raw API response
-- `tests/`: CLI and API client regression coverage
+- `ai_visibility_audit/`: HTTP client, CLI surface, and artifact renderer
+- `docs/`: installation, usage, contract, and parity documentation
+- `examples/`: sample request, sample response, and generated example artifacts
+- `tests/`: API, CLI, and artifact contract coverage
 
 ## Boundary
 
-This repo is the public CLI surface only.
+This repository currently owns the public wrapper surface:
 
-- private runtime stays in PromptScout internals
-- dependency-free skills should live in the separate skill repo
-- this repo owns transport, artifact rendering, docs, and examples
+- transport and CLI UX
+- report rendering and artifact versioning
+- docs, examples, and golden tests
+
+It does not yet own the standalone deterministic audit runtime. That gap is
+tracked explicitly in the parity register instead of being hidden behind
+marketing language.

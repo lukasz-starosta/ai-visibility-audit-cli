@@ -3,7 +3,7 @@
 ## Live scan via API
 
 ```bash
-uv run python -m ai_visibility_audit.cli \
+ai-visibility-audit \
   --domain promptscout.app \
   --page-limit 25 \
   --citation-url https://promptscout.app/pricing \
@@ -14,7 +14,7 @@ uv run python -m ai_visibility_audit.cli \
 ## Explicit API target override
 
 ```bash
-uv run python -m ai_visibility_audit.cli \
+ai-visibility-audit \
   --api-url http://localhost:8081 \
   --api-key local-dev-key \
   --brand-id ai-visibility-audit-local \
@@ -25,7 +25,7 @@ uv run python -m ai_visibility_audit.cli \
 ## Replay checked-in fixtures
 
 ```bash
-uv run python -m ai_visibility_audit.cli \
+ai-visibility-audit \
   --input-file examples/sample-request.json \
   --response-file examples/sample-scan-response.json \
   --stdout-format markdown
@@ -38,3 +38,11 @@ Without `--output-dir`, the CLI prints one artifact to stdout:
 - `--stdout-format summary`
 - `--stdout-format markdown`
 - `--stdout-format json`
+
+## Check catalog
+
+List the currently published baseline checks:
+
+```bash
+ai-visibility-audit --show-checks
+```

@@ -7,6 +7,8 @@ from unittest.mock import AsyncMock, patch
 from ai_visibility_audit.checks import CHECKS_VERSION
 from ai_visibility_audit.cli import main
 
+FIXTURE_ROOT = Path(__file__).parent / "fixtures" / "artifact-contract"
+
 
 def test_cli_writes_expected_files(tmp_path: Path) -> None:
     response = {
@@ -155,3 +157,29 @@ def test_cli_can_run_live_mode_from_env(tmp_path: Path, monkeypatch) -> None:
     assert exit_code == 0
     request_live_scan.assert_awaited_once()
     assert (output_dir / "ai-visibility-audit.json").exists()
+
+
+def test_cli_replay_matches_golden_artifacts(tmp_path: Path) -> None:
+    output_dir = tmp_path / "artifacts"
+
+    exit_code = main(
+        [
+            "--input-file",
+            "examples/sample-request.json",
+            "--response-file",
+            "examples/sample-scan-response.json",
+            "--output-dir",
+            str(output_dir),
+        ]
+    )
+
+    assert exit_code == 0
+    assert json.loads((output_dir / "ai-visibility-audit.json").read_text()) == json.loads(
+        (FIXTURE_ROOT / "expected-ai-visibility-audit.json").read_text()
+    )
+    assert (output_dir / "ai-visibility-audit.md").read_text() == (
+        FIXTURE_ROOT / "expected-ai-visibility-audit.md"
+    ).read_text()
+    assert (output_dir / "ai-visibility-audit.txt").read_text() == (
+        FIXTURE_ROOT / "expected-ai-visibility-audit.txt"
+    ).read_text()

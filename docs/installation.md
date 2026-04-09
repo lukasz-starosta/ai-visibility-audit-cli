@@ -1,11 +1,30 @@
 # Installation
 
+## Requirements
+
+- Python 3.11 or newer
+- `uv` recommended for installation and local development
+
+## Install the CLI
+
+Recommended:
+
+```bash
+uv tool install .
+```
+
+Alternative:
+
+```bash
+python -m pip install .
+```
+
 ## Configure an audit API target
 
 The CLI can call either:
 
-- a hosted PromptScout audit API
-- a local `prompt-suggestion-api` process
+- a hosted audit API
+- a local compatible development API
 
 Supported env vars:
 
@@ -13,7 +32,7 @@ Supported env vars:
 - `AI_VISIBILITY_AUDIT_API_KEY`
 - `AI_VISIBILITY_AUDIT_BRAND_ID` optional
 
-Fallbacks for current internal naming:
+Fallbacks kept for current PromptScout maintainer workflows:
 
 - `PROMPT_SUGGESTION_API_URL`
 - `PROMPT_SUGGESTION_API_KEY`
@@ -29,7 +48,7 @@ export AI_VISIBILITY_AUDIT_API_KEY=local-dev-key
 ## Live audit mode
 
 ```bash
-uv run python -m ai_visibility_audit.cli --domain promptscout.app --output-dir ./out
+ai-visibility-audit --domain promptscout.app --output-dir ./out
 ```
 
 ## Example-only mode
@@ -37,8 +56,16 @@ uv run python -m ai_visibility_audit.cli --domain promptscout.app --output-dir .
 Use this when you want to review the renderer without calling any API:
 
 ```bash
-uv run python -m ai_visibility_audit.cli \
+ai-visibility-audit \
   --input-file examples/sample-request.json \
   --response-file examples/sample-scan-response.json \
   --output-dir examples/generated
+```
+
+## Contributor setup
+
+Install the development group on demand when running tests:
+
+```bash
+uv run --group dev pytest tests -q
 ```
