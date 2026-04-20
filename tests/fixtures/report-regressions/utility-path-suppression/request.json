@@ -1,0 +1,8 @@
+{
+  "domain": "example.com",
+  "page_limit": 4,
+  "citation_urls": [],
+  "pinned_urls": [
+    "https://example.com/en/contact-us"
+  ]
+}

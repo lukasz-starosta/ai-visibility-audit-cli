@@ -3,7 +3,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 
 
-CHECKS_VERSION = "website_scan_v1"
+CHECKS_VERSION = "website_scan_v2"
 
 
 @dataclass(frozen=True)

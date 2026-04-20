@@ -6,20 +6,18 @@
 
 ## Executive Summary
 
-- Action needed across 5 scanned pages with 2 grouped findings.
-- 1 citation hint was supplied to bias owned-page discovery.
-- 1 pinned URL was supplied for targeted rechecks.
+- Action needed across 4 scanned pages with 1 grouped finding.
 - 3 secondary pages look like empty raw HTML shells. This often means important content depends on client-side rendering.
 
 ## Overall Status
 
-- Pages scanned: 5
-- Grouped findings detected: 2
-- Raw findings captured: 13
+- Pages scanned: 4
+- Grouped findings detected: 1
+- Raw findings captured: 12
 - Grouped issue-level findings: 1
-- Grouped warning-level findings: 1
+- Grouped warning-level findings: 0
 - Raw issue-level findings: 0
-- Raw warning-level findings: 13
+- Raw warning-level findings: 12
 - Good pages: 1
 
 ## Site Diagnoses
@@ -31,30 +29,18 @@
 ## Priority Findings
 
 - High: 3 secondary pages look like empty raw HTML shells. This often means important content depends on client-side rendering.
-- Medium: Comparison page is missing structured data (https://example.com/compare)
 
 ## Pages
 
-### Pricing
-- URL: https://example.com/pricing
+### Example
+- URL: https://example.com
 - Status: On track
 - Fetch status: ok
-- Discovered from: citation
-- Page type: pricing
-- Word count: 560
+- Discovered from: homepage
+- Page type: homepage
+- Word count: 320
 - Findings: 0
 - Page findings: none
-
-### PromptScout vs Profound
-- URL: https://example.com/compare
-- Status: Needs work
-- Fetch status: ok
-- Discovered from: manual
-- Page type: comparison
-- Word count: 420
-- Findings: 1
-- Page findings:
-  - Medium / Needs work: Comparison page is missing structured data. Evidence: {"path": "/compare"}
 
 ### https://example.com/service-areas/austin
 - URL: https://example.com/service-areas/austin
@@ -106,4 +92,4 @@
 
 ## Compact Summary
 
-Action needed for example.com: 5 scanned pages, 2 grouped findings. Top priority: 3 secondary pages look like empty raw HTML shells. This often means important content depends on client-side rendering.
+Action needed for example.com: 4 scanned pages, 1 grouped finding. Top priority: 3 secondary pages look like empty raw HTML shells. This often means important content depends on client-side rendering.

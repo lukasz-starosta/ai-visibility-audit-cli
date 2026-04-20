@@ -1,0 +1,206 @@
+{
+  "brand_id": "ai-visibility-audit-oss",
+  "checks_version": "website_scan_v2",
+  "summary": {
+    "base_url": "https://example.com",
+    "overall_status": "warning",
+    "overall_score": 92,
+    "pages_scanned": 7,
+    "findings_count": 1,
+    "issue_count": 0,
+    "warning_count": 1,
+    "good_count": 3,
+    "raw_findings_count": 4,
+    "raw_issue_count": 0,
+    "raw_warning_count": 4,
+    "grouped_findings_count": 1,
+    "grouped_issue_count": 0,
+    "grouped_warning_count": 1,
+    "diagnosis_groups": [],
+    "errors": []
+  },
+  "pages": [
+    {
+      "url": "https://example.com/pricing",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "pricing",
+      "title": "Pricing",
+      "meta_description": "Pricing",
+      "word_count": 320,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      }
+    },
+    {
+      "url": "https://example.com/features",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "feature",
+      "title": "Features",
+      "meta_description": "Features",
+      "word_count": 300,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      }
+    },
+    {
+      "url": "https://example.com/docs",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "docs",
+      "title": "Docs",
+      "meta_description": "Docs",
+      "word_count": 420,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      }
+    },
+    {
+      "url": "https://example.com/about.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      }
+    },
+    {
+      "url": "https://example.com/blog.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      }
+    },
+    {
+      "url": "https://example.com/contacts.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      }
+    },
+    {
+      "url": "https://example.com/wishlist.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      }
+    }
+  ],
+  "findings": [
+    {
+      "page_url": "https://example.com/about.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    },
+    {
+      "page_url": "https://example.com/blog.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    },
+    {
+      "page_url": "https://example.com/contacts.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    },
+    {
+      "page_url": "https://example.com/wishlist.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    }
+  ],
+  "website_audit": null
+}

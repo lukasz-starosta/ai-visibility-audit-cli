@@ -1,1 +1,1 @@
-Needs work for example.com: 3 scanned pages, 2 findings. Top priority: 1 page needs structured data.
+Action needed for example.com: 5 scanned pages, 2 grouped findings. Top priority: 3 secondary pages look like empty raw HTML shells. This often means important content depends on client-side rendering.

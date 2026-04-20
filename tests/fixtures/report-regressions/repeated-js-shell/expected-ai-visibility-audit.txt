@@ -1,0 +1,1 @@
+Action needed for example.com: 4 scanned pages, 1 grouped finding. Top priority: 3 secondary pages look like empty raw HTML shells. This often means important content depends on client-side rendering.

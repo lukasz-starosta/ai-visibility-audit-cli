@@ -1,0 +1,184 @@
+{
+  "artifactVersion": 1,
+  "generatedFrom": "ai_visibility_audit_cli",
+  "checksVersion": "website_scan_v2",
+  "input": {
+    "domain": "example.com",
+    "page_limit": 4,
+    "citation_urls": [],
+    "pinned_urls": [
+      "https://example.com/en/contact-us"
+    ]
+  },
+  "sourceSummary": {
+    "base_url": "https://example.com",
+    "overall_status": "warning",
+    "overall_score": 96,
+    "pages_scanned": 4,
+    "findings_count": 1,
+    "issue_count": 0,
+    "warning_count": 1,
+    "good_count": 3,
+    "raw_findings_count": 1,
+    "raw_issue_count": 0,
+    "raw_warning_count": 1,
+    "grouped_findings_count": 1,
+    "grouped_issue_count": 0,
+    "grouped_warning_count": 1,
+    "diagnosis_groups": [],
+    "errors": []
+  },
+  "summary": {
+    "overallStatus": "warning",
+    "statusLabel": "Needs work",
+    "pagesScanned": 4,
+    "findingsCount": 1,
+    "issueCount": 0,
+    "warningCount": 1,
+    "goodCount": 3,
+    "errors": []
+  },
+  "groupedCounts": {
+    "findings": 1,
+    "issues": 0,
+    "warnings": 1
+  },
+  "rawCounts": {
+    "findings": 1,
+    "issues": 0,
+    "warnings": 1
+  },
+  "executiveSummary": [
+    "Needs work across 4 scanned pages with 1 grouped finding.",
+    "1 pinned URL was supplied for targeted rechecks.",
+    "Contact page contains multiple H1 headings"
+  ],
+  "priorityFindings": [
+    {
+      "findingKey": "multiple_primary_headings",
+      "message": "Contact page contains multiple H1 headings",
+      "pageUrl": "https://example.com/en/contact-us",
+      "severity": "low"
+    }
+  ],
+  "diagnosisGroups": [],
+  "pages": [
+    {
+      "url": "https://example.com/en/contact-us",
+      "canonical_url": null,
+      "discovered_from": "manual",
+      "fetch_status": "ok",
+      "status": "warning",
+      "http_status": 200,
+      "page_type": "contact",
+      "title": "Contact Us",
+      "meta_description": "Contact the team",
+      "word_count": 260,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": [
+        {
+          "page_url": "https://example.com/en/contact-us",
+          "finding_key": "multiple_primary_headings",
+          "severity": "low",
+          "status": "warning",
+          "message": "Contact page contains multiple H1 headings.",
+          "evidence": {
+            "count": 2
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://example.com/about-us",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "about",
+      "title": "About Us",
+      "meta_description": "About the company",
+      "word_count": 340,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": []
+    },
+    {
+      "url": "https://example.com/pricing",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "pricing",
+      "title": "Pricing",
+      "meta_description": "Pricing",
+      "word_count": 310,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": []
+    },
+    {
+      "url": "https://example.com/features",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "feature",
+      "title": "Features",
+      "meta_description": "Features",
+      "word_count": 315,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": []
+    }
+  ],
+  "findings": [
+    {
+      "page_url": "https://example.com/en/contact-us",
+      "finding_key": "multiple_primary_headings",
+      "severity": "low",
+      "status": "warning",
+      "message": "Contact page contains multiple H1 headings.",
+      "evidence": {
+        "count": 2
+      }
+    }
+  ],
+  "websiteAudit": null,
+  "parityGapNotes": [
+    "Prompt-aware coverage summaries remain richer inside the PromptScout Website tab because the OSS CLI does not have monitored-prompt context by default.",
+    "Website-tab criteria cards are not yet emitted as first-class CLI artifacts; grouped findings and site-level diagnoses remain the canonical public read model here.",
+    "Answer-block, snippet-shape, and evidence-density signals remain outside the deterministic shared website_scan_v2 contract."
+  ]
+}

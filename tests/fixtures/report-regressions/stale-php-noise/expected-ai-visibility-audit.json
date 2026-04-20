@@ -1,0 +1,302 @@
+{
+  "artifactVersion": 1,
+  "generatedFrom": "ai_visibility_audit_cli",
+  "checksVersion": "website_scan_v2",
+  "input": {
+    "domain": "example.com",
+    "page_limit": 8,
+    "citation_urls": [],
+    "pinned_urls": []
+  },
+  "sourceSummary": {
+    "base_url": "https://example.com",
+    "overall_status": "warning",
+    "overall_score": 92,
+    "pages_scanned": 7,
+    "findings_count": 1,
+    "issue_count": 0,
+    "warning_count": 1,
+    "good_count": 3,
+    "raw_findings_count": 4,
+    "raw_issue_count": 0,
+    "raw_warning_count": 4,
+    "grouped_findings_count": 1,
+    "grouped_issue_count": 0,
+    "grouped_warning_count": 1,
+    "diagnosis_groups": [],
+    "errors": []
+  },
+  "summary": {
+    "overallStatus": "warning",
+    "statusLabel": "Needs work",
+    "pagesScanned": 7,
+    "findingsCount": 1,
+    "issueCount": 0,
+    "warningCount": 1,
+    "goodCount": 3,
+    "errors": []
+  },
+  "groupedCounts": {
+    "findings": 1,
+    "issues": 0,
+    "warnings": 1
+  },
+  "rawCounts": {
+    "findings": 4,
+    "issues": 0,
+    "warnings": 4
+  },
+  "executiveSummary": [
+    "Needs work across 7 scanned pages with 1 grouped finding.",
+    "4 secondary pages could not be fetched from homepage discovery."
+  ],
+  "priorityFindings": [
+    {
+      "findingKey": "page_fetch_failed",
+      "message": "4 secondary pages could not be fetched from homepage discovery.",
+      "pageUrl": null,
+      "severity": "medium"
+    }
+  ],
+  "diagnosisGroups": [],
+  "pages": [
+    {
+      "url": "https://example.com/pricing",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "pricing",
+      "title": "Pricing",
+      "meta_description": "Pricing",
+      "word_count": 320,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": []
+    },
+    {
+      "url": "https://example.com/features",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "feature",
+      "title": "Features",
+      "meta_description": "Features",
+      "word_count": 300,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": []
+    },
+    {
+      "url": "https://example.com/docs",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "ok",
+      "status": "good",
+      "http_status": 200,
+      "page_type": "docs",
+      "title": "Docs",
+      "meta_description": "Docs",
+      "word_count": 420,
+      "heading_summary": {},
+      "schema_summary": {
+        "has_schema": true
+      },
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "core"
+      },
+      "findings": []
+    },
+    {
+      "url": "https://example.com/about.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      },
+      "findings": [
+        {
+          "page_url": "https://example.com/about.php",
+          "finding_key": "page_fetch_failed",
+          "severity": "medium",
+          "status": "warning",
+          "message": "Page could not be fetched during the scan.",
+          "evidence": {
+            "http_status": 404
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://example.com/blog.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      },
+      "findings": [
+        {
+          "page_url": "https://example.com/blog.php",
+          "finding_key": "page_fetch_failed",
+          "severity": "medium",
+          "status": "warning",
+          "message": "Page could not be fetched during the scan.",
+          "evidence": {
+            "http_status": 404
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://example.com/contacts.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      },
+      "findings": [
+        {
+          "page_url": "https://example.com/contacts.php",
+          "finding_key": "page_fetch_failed",
+          "severity": "medium",
+          "status": "warning",
+          "message": "Page could not be fetched during the scan.",
+          "evidence": {
+            "http_status": 404
+          }
+        }
+      ]
+    },
+    {
+      "url": "https://example.com/wishlist.php",
+      "canonical_url": null,
+      "discovered_from": "homepage",
+      "fetch_status": "not_found",
+      "status": "warning",
+      "http_status": 404,
+      "page_type": "other",
+      "title": null,
+      "meta_description": null,
+      "word_count": null,
+      "heading_summary": {},
+      "schema_summary": {},
+      "freshness_date": null,
+      "freshness_confidence": null,
+      "evidence": {
+        "page_role": "secondary"
+      },
+      "findings": [
+        {
+          "page_url": "https://example.com/wishlist.php",
+          "finding_key": "page_fetch_failed",
+          "severity": "medium",
+          "status": "warning",
+          "message": "Page could not be fetched during the scan.",
+          "evidence": {
+            "http_status": 404
+          }
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "page_url": "https://example.com/about.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    },
+    {
+      "page_url": "https://example.com/blog.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    },
+    {
+      "page_url": "https://example.com/contacts.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    },
+    {
+      "page_url": "https://example.com/wishlist.php",
+      "finding_key": "page_fetch_failed",
+      "severity": "medium",
+      "status": "warning",
+      "message": "Page could not be fetched during the scan.",
+      "evidence": {
+        "http_status": 404
+      }
+    }
+  ],
+  "websiteAudit": null,
+  "parityGapNotes": [
+    "Prompt-aware coverage summaries remain richer inside the PromptScout Website tab because the OSS CLI does not have monitored-prompt context by default.",
+    "Website-tab criteria cards are not yet emitted as first-class CLI artifacts; grouped findings and site-level diagnoses remain the canonical public read model here.",
+    "Answer-block, snippet-shape, and evidence-density signals remain outside the deterministic shared website_scan_v2 contract."
+  ]
+}

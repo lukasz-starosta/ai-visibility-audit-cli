@@ -32,12 +32,33 @@ Each run can emit:
 - `input`
 - `sourceSummary`
 - `summary`
+- `groupedCounts`
+- `rawCounts`
 - `executiveSummary`
 - `priorityFindings`
+- `diagnosisGroups`
 - `pages`
 - `findings`
 - `websiteAudit`
 - `parityGapNotes`
+
+## Website Audit v2 semantics
+
+- `checksVersion` should now align to `website_scan_v2`.
+- `summary.findingsCount`, `summary.issueCount`, and `summary.warningCount`
+  are grouped headline counts, not raw page-level totals.
+- `groupedCounts` makes the grouped headline counts explicit for downstream
+  wrappers.
+- `rawCounts` preserves the uncollapsed page-level totals from the scan engine.
+- `diagnosisGroups` carries site-level diagnoses such as
+  `likely_js_rendered_raw_html_shell`.
+- `findings` remains the raw page-level evidence list and may be larger than the
+  grouped headline counts.
+- grouped rendering is page-role-aware: core-page failures stay page-specific,
+  while repeated secondary or utility-page noise may collapse into one grouped
+  priority finding.
+- `input.pinned_urls` is part of the shared input contract for targeted
+  rescans, even if dashboard UX for focused scans ships separately.
 
 ## Fixture coverage
 

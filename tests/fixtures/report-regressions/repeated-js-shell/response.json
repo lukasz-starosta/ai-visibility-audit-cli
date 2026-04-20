@@ -4,18 +4,18 @@
   "summary": {
     "base_url": "https://example.com",
     "overall_status": "issue",
-    "overall_score": 78,
-    "pages_scanned": 5,
-    "findings_count": 2,
+    "overall_score": 81,
+    "pages_scanned": 4,
+    "findings_count": 1,
     "issue_count": 1,
-    "warning_count": 1,
+    "warning_count": 0,
     "good_count": 1,
-    "raw_findings_count": 13,
+    "raw_findings_count": 12,
     "raw_issue_count": 0,
-    "raw_warning_count": 13,
-    "grouped_findings_count": 2,
+    "raw_warning_count": 12,
+    "grouped_findings_count": 1,
     "grouped_issue_count": 1,
-    "grouped_warning_count": 1,
+    "grouped_warning_count": 0,
     "diagnosis_groups": [
       {
         "id": "likely_js_rendered_raw_html_shell",
@@ -34,58 +34,19 @@
   },
   "pages": [
     {
-      "url": "https://example.com/pricing",
+      "url": "https://example.com",
       "canonical_url": null,
-      "discovered_from": "citation",
+      "discovered_from": "homepage",
       "fetch_status": "ok",
       "status": "good",
       "http_status": 200,
-      "page_type": "pricing",
-      "title": "Pricing",
-      "meta_description": "PromptScout pricing",
-      "word_count": 560,
-      "heading_summary": {
-        "h1_count": 1,
-        "h2_count": 3,
-        "h3_count": 1,
-        "h1": ["Pricing"],
-        "h2": ["Plans", "Compare tiers", "FAQ"],
-        "h3": ["Annual"]
-      },
+      "page_type": "homepage",
+      "title": "Example",
+      "meta_description": "Example site",
+      "word_count": 320,
+      "heading_summary": {},
       "schema_summary": {
-        "script_count": 1,
-        "types": ["Product"],
         "has_schema": true
-      },
-      "freshness_date": "2026-04-08T00:00:00+00:00",
-      "freshness_confidence": 0.9,
-      "evidence": {
-        "page_role": "core"
-      }
-    },
-    {
-      "url": "https://example.com/compare",
-      "canonical_url": null,
-      "discovered_from": "manual",
-      "fetch_status": "ok",
-      "status": "warning",
-      "http_status": 200,
-      "page_type": "comparison",
-      "title": "PromptScout vs Profound",
-      "meta_description": "Comparison page",
-      "word_count": 420,
-      "heading_summary": {
-        "h1_count": 1,
-        "h2_count": 2,
-        "h3_count": 0,
-        "h1": ["PromptScout vs Profound"],
-        "h2": ["Features", "Support"],
-        "h3": []
-      },
-      "schema_summary": {
-        "script_count": 0,
-        "types": [],
-        "has_schema": false
       },
       "freshness_date": null,
       "freshness_confidence": null,
@@ -104,17 +65,8 @@
       "title": null,
       "meta_description": null,
       "word_count": 4,
-      "heading_summary": {
-        "h1_count": 0,
-        "h2_count": 0,
-        "h3_count": 0,
-        "h1": [],
-        "h2": [],
-        "h3": []
-      },
+      "heading_summary": {},
       "schema_summary": {
-        "script_count": 0,
-        "types": [],
         "has_schema": false
       },
       "freshness_date": null,
@@ -134,17 +86,8 @@
       "title": null,
       "meta_description": null,
       "word_count": 5,
-      "heading_summary": {
-        "h1_count": 0,
-        "h2_count": 0,
-        "h3_count": 0,
-        "h1": [],
-        "h2": [],
-        "h3": []
-      },
+      "heading_summary": {},
       "schema_summary": {
-        "script_count": 0,
-        "types": [],
         "has_schema": false
       },
       "freshness_date": null,
@@ -164,17 +107,8 @@
       "title": null,
       "meta_description": null,
       "word_count": 3,
-      "heading_summary": {
-        "h1_count": 0,
-        "h2_count": 0,
-        "h3_count": 0,
-        "h1": [],
-        "h2": [],
-        "h3": []
-      },
+      "heading_summary": {},
       "schema_summary": {
-        "script_count": 0,
-        "types": [],
         "has_schema": false
       },
       "freshness_date": null,
@@ -185,16 +119,6 @@
     }
   ],
   "findings": [
-    {
-      "page_url": "https://example.com/compare",
-      "finding_key": "missing_schema_markup",
-      "severity": "medium",
-      "status": "warning",
-      "message": "Comparison page is missing structured data.",
-      "evidence": {
-        "path": "/compare"
-      }
-    },
     {
       "page_url": "https://example.com/service-areas/austin",
       "finding_key": "missing_title",
