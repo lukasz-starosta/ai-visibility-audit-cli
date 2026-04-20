@@ -12,6 +12,7 @@ The current public package ships:
 - the artifact contract
 - replayable example fixtures
 - golden regression tests
+- grouped-diagnosis Website Audit v2 summary semantics
 
 The standalone public audit runner is not yet extracted into this repository.
 
@@ -22,7 +23,7 @@ The standalone public audit runner is not yet extracted into this repository.
 - Prompt-aware coverage outputs remain richer in PromptScout because the OSS
   surface does not have monitored-prompt context by default.
 - Answer-block, snippet-shape, and evidence-density signals remain outside the
-  deterministic shared v1 contract.
+  deterministic shared `website_scan_v2` contract.
 - Numeric score handling is passed through in `sourceSummary`, but the public
   surface still treats coarse status as the headline signal.
 

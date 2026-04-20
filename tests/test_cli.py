@@ -13,7 +13,7 @@ FIXTURE_ROOT = Path(__file__).parent / "fixtures" / "artifact-contract"
 def test_cli_writes_expected_files(tmp_path: Path) -> None:
     response = {
         "brand_id": "ai-visibility-audit-oss",
-        "checks_version": "website_scan_v1",
+        "checks_version": "website_scan_v2",
         "summary": {
             "base_url": "https://example.com",
             "overall_status": "good",
@@ -23,6 +23,13 @@ def test_cli_writes_expected_files(tmp_path: Path) -> None:
             "issue_count": 0,
             "warning_count": 0,
             "good_count": 1,
+            "raw_findings_count": 0,
+            "raw_issue_count": 0,
+            "raw_warning_count": 0,
+            "grouped_findings_count": 0,
+            "grouped_issue_count": 0,
+            "grouped_warning_count": 0,
+            "diagnosis_groups": [],
             "errors": [],
         },
         "pages": [
@@ -94,7 +101,7 @@ def test_cli_can_run_live_mode_from_env(tmp_path: Path, monkeypatch) -> None:
     output_dir = tmp_path / "artifacts"
     live_response = {
         "brand_id": "live-brand",
-        "checks_version": "website_scan_v1",
+        "checks_version": "website_scan_v2",
         "summary": {
             "base_url": "https://example.com",
             "overall_status": "warning",
@@ -104,6 +111,13 @@ def test_cli_can_run_live_mode_from_env(tmp_path: Path, monkeypatch) -> None:
             "issue_count": 0,
             "warning_count": 1,
             "good_count": 0,
+            "raw_findings_count": 1,
+            "raw_issue_count": 0,
+            "raw_warning_count": 1,
+            "grouped_findings_count": 1,
+            "grouped_issue_count": 0,
+            "grouped_warning_count": 1,
+            "diagnosis_groups": [],
             "errors": [],
         },
         "pages": [
